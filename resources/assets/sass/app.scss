@@ -1,0 +1,47 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+//@import "bootswatch";
+
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// animate.css
+@import "node_modules/animate.scss/vendor/assets/stylesheets/animate.scss";
+
+
+body {
+   padding-top: 5em;
+}
+
+.media-left img {
+    width: 130px;
+}
+
+
+//$break-small: 320px;
+//$break-large: 1024px;
+//
+//@mixin respond-to($media) {
+//  @if $media == handhelds {
+//    @media only screen and (max-width: $break-small) { @content; }
+//  }
+//  @else if $media == medium-screens {
+//    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+//  }
+//  @else if $media == wide-screens {
+//    @media only screen and (min-width: $break-large) { @content; }
+//  }
+//}
+//
+//.media-left img {
+//  max-width: 130px;
+//  @include respond-to(handhelds) { max-width: none;}
+//  @include respond-to(medium-screens) { max-width: 130px; }
+//  @include respond-to(wide-screens) { max-width: 130px; }
+//}
