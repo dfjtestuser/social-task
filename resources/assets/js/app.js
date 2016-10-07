@@ -1,6 +1,4 @@
 require('./bootstrap');
-require('angular');
-require('ng-infinite-scroll');
 
 const app = angular.module('postApp', ['infinite-scroll']);
 
