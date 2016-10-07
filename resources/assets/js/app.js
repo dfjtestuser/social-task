@@ -2,22 +2,19 @@ require('./bootstrap');
 
 const app = angular.module('postApp', ['infinite-scroll']);
 
-
-app.directive("view-post", function($interpolate) {
+app.directive("viewPost", function(){
     return {
-        scope: {},
-        template: '<div>{{ post.title }}</div>',
-        link: function(scope, element, attrs) {
-            // element.attr('flavor') == '{{flav}}'
-            // `flav` is defined on `scope.$parent` from the ng-repeat
-            var fn = $interpolate(element.attr('flavor'));
-            scope.flavor = fn(scope.$parent);
+        restrict: 'E',
+        template: "<span><strong>{{post.id}}</strong> ({{post.caption}})</span>",
+        replace: true,
+        scope: {
+            post: '='
         }
-    };
+    }
 });
 
 app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$timeout) {
-    
+
     $scope.loading = true;
     $scope.loadingError = false;
     $scope.offset = 0;
@@ -28,7 +25,7 @@ app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$
 
     $scope.loadPosts = function() {
         $http.get('/post/'+$scope.offset).then(function(response) {
-           $scope.posts = response.data;
+            $scope.posts = response.data;
             $scope.loading = false;
 
         });
@@ -36,9 +33,9 @@ app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$
 
 
     $scope.loadMore = function() {
-        if(!$scope.loadingError) {
-            return;
-        }
+        // if(!$scope.loadingError) {
+        //     return;
+        // }
         var offset = $scope.posts.length;
         if(!$scope.scroll.busy) {
             $scope.scroll.busy = true;
@@ -47,7 +44,6 @@ app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$
                     if(data.length > 0) {
                         $scope.posts = $scope.posts.concat(data);
                         $scope.scroll.busy = false;
-
                     } else {
                         $scope.scroll.busy = false;
                     }
@@ -59,10 +55,12 @@ app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$
 
 
     $scope.filterPosts = function () {
-        $scope.scroll.busy = false;
-        $http.get('/post/0/'+$scope.srcword).success(function(data) {
-            $scope.posts = data;
-        });
+        if($scope.srcword.length > 2) {
+            $scope.scroll.busy = false;
+            $http.get('/post/0/'+$scope.srcword).success(function(data) {
+                $scope.posts = data;
+            });
+        }
     }
 
 

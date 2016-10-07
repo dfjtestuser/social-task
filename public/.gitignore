@@ -1,0 +1,4 @@
+!.gitignore
+build/*
+js/app.js
+css/app.css

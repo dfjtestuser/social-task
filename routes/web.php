@@ -15,6 +15,10 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Route::get('/register', function() {
+    return redirect('/login');
+});
+
 Auth::routes();
 
 
