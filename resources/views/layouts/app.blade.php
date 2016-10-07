@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <css></css>
-    <link href="{{ elxir("css/app.css") }}" rel="stylesheet">
+    <link href="{{ elixir("css/app.css") }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <style type="text/css">
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
