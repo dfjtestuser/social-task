@@ -16,4 +16,5 @@ elixir(mix => {
     mix
        .sass('app.scss')
        .webpack('app.js')
+       .version(["./public/css/app.css","./public/js/app.js"]);
 });
