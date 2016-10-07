@@ -23,7 +23,7 @@
             <ul class="media-list" >
                 <li ng-repeat="post in filteredPosts  = ( posts | filter: srcword ) track by $index">
                     <div class="panel">
-                        <div class="panel-body animated slideOutRight fadeIn">
+                        <div class="panel-body">
                              <div class="media">
                                 <div class="media-left" ng-show="post.attachments.data[0].media.image.src">
                                     <a href="@{{ post.full_picture  }}" target="_blank"  ng-show="post.picture">
@@ -41,7 +41,7 @@
                     </div>
                 </li>
             </ul>
-            <div class="row text-center" ng-show="scroll.busy || loading">
+            <div class="row text-center" ng-show="(scroll.busy || loading) && !loadingError">
                 <i class="fa fa-spin fa-circle-o-notch"></i> Loading feeds...
             </div>
         </div>

@@ -32,11 +32,12 @@ class SocialAccountService
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
+                    'password' => bcrypt('facebook')
                 ]);
             }
 
             $account->user()->associate($user);
-	    $account->access_token = $providerUser->token;
+	        $account->access_token = $providerUser->token;
             $account->save();
 
             return $user;

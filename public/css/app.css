@@ -5767,16 +5767,6 @@ button.close {
     display: none !important; } }
 
 body {
-  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
-  -webkit-backface-visibility: hidden; }
-
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
-body {
   padding-top: 5em; }
 
 .media-left img {

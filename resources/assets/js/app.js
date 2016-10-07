@@ -38,6 +38,9 @@ app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$
 
 
     $scope.loadMore = function() {
+        if(!$scope.loadingError) {
+            return;
+        }
         var offset = $scope.posts.length;
         if(!$scope.scroll.busy) {
             $scope.scroll.busy = true;
@@ -48,11 +51,12 @@ app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$
                         $scope.scroll.busy = false;
 
                     } else {
-                        $scope.scroll.busy = true;
+                        $scope.scroll.busy = false;
                     }
                 });
             },300);
         }
+        return;
     }
 
 
@@ -70,11 +74,13 @@ app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$
             function(response) {
                 if(response.data.status == 'error') {
                     $scope.loading = false;
+                    $scope.scroll.busy = false;
                     $scope.loadingError = true;
                     $scope.errorText = response.data.message;
                 }
 
                 if(response.data.status == 'processing') {
+                    $scope.loading = true;
                     $scope.loading = true;
                     $timeout($scope.checkUpdate(),60000);
                 }

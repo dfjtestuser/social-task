@@ -75,14 +75,7 @@ class FetchData extends Command
                 $post['created_time'] = date("Y-m-d H:i:s",strtotime($post['created_time']));
                 $post = json_decode(json_encode($post),1);
                 if(!Post::find($post['id'])) {
-                    try {
                         Post::create($post);
-                    } catch(\Illuminate\Database\QueryException $e) {
-                        print_r($post);
-                        dd($e->getMessage());
-
-
-                    }
                 }
             }
             $status = ['time' => time(), 'status' => 'done'];
