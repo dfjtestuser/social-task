@@ -12,10 +12,10 @@ class SocialAccountService
         $account = SocialAccount::whereProvider('facebook')
             ->whereProviderUserId($providerUser->getId())
             ->first();
-	$account->access_token = $providerUser->token;
-	$account->save();
 
         if ($account) {
+            $account->access_token = $providerUser->token;
+            $account->save();
             return $account->user;
         } else {
 
