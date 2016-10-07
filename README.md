@@ -14,8 +14,8 @@ This is a demonstration project for fetching your facebook posts, storing to dat
   # edit your  .env file for database access
 ```
 
-## Demo
+You can register with "login with Facebook" button, later can both access with your email and 'facebook' for passwword.
+
+## Try online
  * http://myposts.dfj.hu
 
-
-You can register with "login with Facebook" button, later can both access with your email and 'facebook' for passwword.
