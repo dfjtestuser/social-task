@@ -5,7 +5,7 @@ This is a demonstration project for fetching your facebook posts and storing int
 
 ## install
 ```
-#!shell
+#!bash
   git clone (repository url)
   composer intall
   npm install
@@ -19,7 +19,7 @@ You can register with "login with Facebook" button, later can both access with y
 ## Try online
  * http://myposts.dfj.hu
 
-## @TODO
+## TODO
  * make posts prettier
  * refactoring
  * tests
