@@ -1,6 +1,6 @@
 # social-task
 
-This is a demonstration project for fetching your facebook posts, storing to database
+This is a demonstration project for fetching your facebook posts and storing into database.
 
 
 ## install
@@ -21,4 +21,5 @@ You can register with "login with Facebook" button, later can both access with y
 
 ## @TODO
  * make posts prettier
- *
+ * refactoring
+ * tests
