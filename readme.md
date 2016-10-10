@@ -4,8 +4,7 @@ This is a demonstration project for fetching your facebook posts and storing int
 
 
 ## install
-```
-#!bash
+```bash
   git clone (repository url)
   composer intall
   npm install
