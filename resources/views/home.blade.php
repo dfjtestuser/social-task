@@ -22,24 +22,23 @@
         <div class="col-md-12" ng-cloak infinite-scroll="loadMore()"  infinite-scroll-distance="1" infinite-scroll-disabled='scroll.busy'>
             <ul class="media-list" >
                 <li ng-repeat="post in filteredPosts  = ( posts | filter: srcword ) track by $index">
-                    <view-post post="@{{ post }}"></view-post>
-                    {{--<div class="panel">--}}
-                        {{--<div class="panel-body">--}}
-                             {{--<div class="media">--}}
-                                {{--<div class="media-left" ng-show="post.attachments.data[0].media.image.src">--}}
-                                    {{--<a href="@{{ post.full_picture  }}" target="_blank"  ng-show="post.picture">--}}
-                                        {{--<img src="@{{ post.picture }}" class="media-object" alt="">--}}
-                                    {{--</a>--}}
-                                {{--</div>--}}
-                                {{--<div class="media-body">--}}
-                                    {{--<h4 class="media-heading">@{{ post.caption }}<small><i>@{{ post.created_time }}</i></small></h4>--}}
-                                    {{--<p ng-show="post.message">@{{ post.message }}</p>--}}
-                                    {{--<p ng-show="post.description">@{{ post.description }}</p>--}}
-                                    {{--<a href="@{{ post.link }}" class="link">@{{ post.link }}</a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
+                    <div class="panel">
+                        <div class="panel-body">
+                             <div class="media">
+                                <div class="media-left" ng-show="post.attachments.data[0].media.image.src">
+                                    <a href="@{{ post.full_picture  }}" target="_blank"  ng-show="post.picture">
+                                        <img src="@{{ post.picture }}" class="media-object" alt="">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">@{{ post.caption }}<small><i>@{{ post.created_time }}</i></small></h4>
+                                    <p ng-show="post.message">@{{ post.message }}</p>
+                                    <p ng-show="post.description">@{{ post.description }}</p>
+                                    <a href="@{{ post.link }}" class="link">@{{ post.link }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
             <div class="row text-center" ng-show="(scroll.busy || loading) && !loadingError">

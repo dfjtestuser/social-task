@@ -2,17 +2,6 @@ require('./bootstrap');
 
 const app = angular.module('postApp', ['infinite-scroll']);
 
-app.directive("viewPost", function(){
-    return {
-        restrict: 'E',
-        template: "<span><strong>{{post.id}}</strong> ({{post.caption}})</span>",
-        replace: true,
-        scope: {
-            post: '='
-        }
-    }
-});
-
 app.controller('PostCtrl', ['$scope','$http','$timeout', function($scope,$http,$timeout) {
 
     $scope.loading = true;
