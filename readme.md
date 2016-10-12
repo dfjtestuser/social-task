@@ -7,7 +7,7 @@ This is a demonstration project for fetching your facebook posts and storing int
 ```bash
   git clone https://github.com/defji/social-task
   cd social-task
-  composer intall
+  composer install
   npm install
   php artisan migrate
   php artisan key:generate
